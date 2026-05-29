@@ -1,5 +1,7 @@
 # Use the official Node.js image
 FROM node:18-slim
+# Add this line right after the FROM node line
+RUN apt-get update && apt-get install -y ffmpeg && rm -rf /var/lib/apt/lists/*
 
 # Set the working directory
 WORKDIR /app
